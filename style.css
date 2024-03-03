@@ -1,0 +1,47 @@
+.nav{
+    height: 35px;
+    background-color: #EA906C;
+}
+#body_div{
+    margin-top: 20px;
+}
+p{
+    font-size: 17px;
+}
+.card-header{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.card{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.title{
+    height: 70px;
+    width: 100%;
+}
+h1{
+    padding-top: 10px;
+}
+body{
+    background-color: #EEE2DE;
+}
+*{
+    font-family: 'Courier New', Courier, monospace;
+    color: #2B2A4C;
+}
+.bg-light{
+    background-color: #EA906C!important;
+}
+#spacecrafts_card{
+background-color: white!important;
+}
+#launchers_card{
+    background-color: white!important;  
+}
+#customer_satellite_card{
+    background-color: white!important;
+}
+#centers{
+    background-color: white!important;
+}
