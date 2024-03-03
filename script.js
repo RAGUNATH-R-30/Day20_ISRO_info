@@ -41,19 +41,25 @@ async function spacecrafts(clickedelement){
     }
     clickedelement.classList.add('active');
     //api retrive
-    let spacecrafts_url =await fetch("https://isro.vercel.app/api/spacecrafts")
-    let response = await spacecrafts_url.json()
-    let body_div = document.getElementById("body_div")
-    body_div.innerHTML="";
-    for(var i = 0;i<response.spacecrafts.length;i++){
-        let spacecraft_div = document.createElement("div")
-        spacecraft_div.innerHTML = `<div class="card bg-light mb-3" id="spacecrafts_card" style="max-width: 100%;">
-        <div class="card-body">
-          <p class="card-text">${i+1}.${response.spacecrafts[i].name}.</p>
-        </div>
-      </div>`
-      body_div.append(spacecraft_div)
+    try {
+      let spacecrafts_url =await fetch("https://isro.vercel.app/api/spacecrafts")
+      let response = await spacecrafts_url.json()
+      let body_div = document.getElementById("body_div")
+      body_div.innerHTML="";
+      for(var i = 0;i<response.spacecrafts.length;i++){
+          let spacecraft_div = document.createElement("div")
+          spacecraft_div.innerHTML = `<div class="card bg-light mb-3" id="spacecrafts_card" style="max-width: 100%;">
+          <div class="card-body">
+            <p class="card-text">${i+1}.${response.spacecrafts[i].name}.</p>
+          </div>
+        </div>`
+        body_div.append(spacecraft_div)
+      }
+      
+    } catch (error) {
+      alert(error)
     }
+
 }
 
 
@@ -65,19 +71,24 @@ async function launchers(clickedelement){
     }
     clickedelement.classList.add('active');
     //api retrive
-    let launchers_url = await fetch("https://isro.vercel.app/api/launchers")
-    let response = await launchers_url.json();
-    let body_div = document.getElementById("body_div")
-    body_div.innerHTML="";
-    for(var i=0;i<response.launchers.length;i++){
-        let launcher_div = document.createElement("div")
-        launcher_div.innerHTML = `<div class="card bg-light mb-3" id="launchers_card" style="max-width: 100%;">
-        <div class="card-body">
-          <p class="card-text">${i+1}.${response.launchers[i].id}.</p>
-        </div>
-      </div>` 
-      body_div.append(launcher_div)
+    try {
+      let launchers_url = await fetch("https://isro.vercel.app/api/launchers")
+      let response = await launchers_url.json();
+      let body_div = document.getElementById("body_div")
+      body_div.innerHTML="";
+      for(var i=0;i<response.launchers.length;i++){
+          let launcher_div = document.createElement("div")
+          launcher_div.innerHTML = `<div class="card bg-light mb-3" id="launchers_card" style="max-width: 100%;">
+          <div class="card-body">
+            <p class="card-text">${i+1}.${response.launchers[i].id}.</p>
+          </div>
+        </div>` 
+        body_div.append(launcher_div)
+      }
+    } catch (error) {
+      alert(error)
     }
+
 }
 
 
@@ -89,22 +100,27 @@ async function customer_satellites(clickedelement){
     }
     clickedelement.classList.add('active');
     //api retrive
-    let customer_satellites_url = await fetch("https://isro.vercel.app/api/customer_satellites")
-    let response = await customer_satellites_url.json();
-    let body_div = document.getElementById("body_div")
-    body_div.innerHTML="";
-    for(var i= 0;i<response.customer_satellites.length;i++){
-        let customer_satellites_div =document.createElement("div");
-        customer_satellites_div.innerHTML=`<div class="card bg-light mb-3" id="customer_satellite_card" style="max-width: 100%;">
-        <div class="card-header">${i+1}.${response.customer_satellites[i].country}</div>
-        <div class="card-body">
-          <p>Launcher: ${response.customer_satellites[i].launcher}.</p>
-          <p>Launch Date: ${response.customer_satellites[i].launch_date}.</p>
-          <p>Id: ${response.customer_satellites[i].id}.</p>
-        </div>
-      </div>`
-      body_div.append(customer_satellites_div)
+    try {
+      let customer_satellites_url = await fetch("https://isro.vercel.app/api/customer_satellites")
+      let response = await customer_satellites_url.json();
+      let body_div = document.getElementById("body_div")
+      body_div.innerHTML="";
+      for(var i= 0;i<response.customer_satellites.length;i++){
+          let customer_satellites_div =document.createElement("div");
+          customer_satellites_div.innerHTML=`<div class="card bg-light mb-3" id="customer_satellite_card" style="max-width: 100%;">
+          <div class="card-header">${i+1}.${response.customer_satellites[i].country}</div>
+          <div class="card-body">
+            <p>Launcher: ${response.customer_satellites[i].launcher}.</p>
+            <p>Launch Date: ${response.customer_satellites[i].launch_date}.</p>
+            <p>Id: ${response.customer_satellites[i].id}.</p>
+          </div>
+        </div>`
+        body_div.append(customer_satellites_div)
+      }
+    } catch (error) {
+      alert(error)
     }
+
 }
 
 
@@ -116,19 +132,24 @@ async function centers(clickedelement){
     }
     clickedelement.classList.add('active');
     //api retrive
-    let centers_url = await fetch("https://isro.vercel.app/api/centres")
-    let response = await centers_url.json();
-    let body_div = document.getElementById("body_div")
-    body_div.innerHTML="";
-    for(var i= 0;i<response.centres.length;i++){
-        let customer_satellites_div =document.createElement("div");
-        customer_satellites_div.innerHTML=`<div class="card bg-light mb-3" id ="centers" style="max-width: 100%;">
-        <div class="card-header">${i+1}.${response.centres[i].Place}</div>
-        <div class="card-body">
-          <p>Name: ${response.centres[i].name}.</p>
-          <p>State: ${response.centres[i].State}.</p>
-        </div>
-      </div>`
-      body_div.append(customer_satellites_div)
+    try {
+      let centers_url = await fetch("https://isro.vercel.app/api/centres")
+      let response = await centers_url.json();
+      let body_div = document.getElementById("body_div")
+      body_div.innerHTML="";
+      for(var i= 0;i<response.centres.length;i++){
+          let customer_satellites_div =document.createElement("div");
+          customer_satellites_div.innerHTML=`<div class="card bg-light mb-3" id ="centers" style="max-width: 100%;">
+          <div class="card-header">${i+1}.${response.centres[i].Place}</div>
+          <div class="card-body">
+            <p>Name: ${response.centres[i].name}.</p>
+            <p>State: ${response.centres[i].State}.</p>
+          </div>
+        </div>`
+        body_div.append(customer_satellites_div)
+      }
+    } catch (error) {
+      alert(error)
     }
+
 }
